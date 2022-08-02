@@ -3,35 +3,35 @@ import './Calculator.css';
 
 const Utility = () => (
   <div className="utility">
-    <p>AC</p>
-    <p>+/-</p>
-    <p>%</p>
+    <button type="button">AC</button>
+    <button type="button">+/-</button>
+    <button type="button">%</button>
   </div>
 );
 
 const LeftSide = () => (
   <div className="leftSide">
-    <p>÷</p>
-    <p>*</p>
-    <p>-</p>
-    <p>+</p>
-    <p>=</p>
+    <button type="button">÷</button>
+    <button type="button">*</button>
+    <button type="button">-</button>
+    <button type="button">+</button>
+    <button type="button">=</button>
   </div>
 );
 
 const Numpad = () => (
   <div className="numpad">
-    <p>7</p>
-    <p>8</p>
-    <p>9</p>
-    <p>4</p>
-    <p>5</p>
-    <p>6</p>
-    <p>1</p>
-    <p>2</p>
-    <p>3</p>
-    <p className="numpad-0">0</p>
-    <p>.</p>
+    <button type="button">7</button>
+    <button type="button">8</button>
+    <button type="button">9</button>
+    <button type="button">4</button>
+    <button type="button">5</button>
+    <button type="button">6</button>
+    <button type="button">1</button>
+    <button type="button">2</button>
+    <button type="button">3</button>
+    <button type="button" className="numpad-0">0</button>
+    <button type="button">.</button>
   </div>
 );
 
