@@ -2,7 +2,7 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   width: 50%;
   height: 500px;
 }
@@ -10,21 +10,21 @@
 #result {
   background: #777;
   color: #fff;
-  text-align:end;
+  text-align: end;
   padding: 20px;
 }
 
 .pad {
   display: grid;
-  grid-template-areas: 
-  'uility uility uility leftSide'
-  'Numpad Numpad Numpad leftSide'
-  'Numpad Numpad Numpad leftSide'
-  'Numpad Numpad Numpad leftSide';
+  grid-template-areas:
+    'uility uility uility leftSide'
+    'Numpad Numpad Numpad leftSide'
+    'Numpad Numpad Numpad leftSide'
+    'Numpad Numpad Numpad leftSide';
 }
 
 .utility {
-  background: #E0E0E0;
+  background: #e0e0e0;
   grid-area: uility;
   display: grid;
   grid-template-columns: repeat(3, minmax(25px, 1fr));
@@ -32,7 +32,7 @@
 }
 
 .leftSide {
-  background: #F5913E;
+  background: #f5913e;
   grid-area: leftSide;
   display: grid;
   grid-template-columns: minmax(25px, 1fr);
@@ -40,7 +40,7 @@
 }
 
 .numpad {
-  background: #E0E0E0;
+  background: #e0e0e0;
   grid-area: Numpad;
   display: grid;
   grid-template-columns: repeat(3, minmax(25px, 1fr));
@@ -48,7 +48,7 @@
 }
 
 .numpad-0 {
-  grid-column: 1/3 ;
+  grid-column: 1/3;
 }
 
 .numpad *,
