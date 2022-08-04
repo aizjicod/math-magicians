@@ -1,71 +1,55 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Calculator.css';
 import calculate from '../logic/calculate';
 
-class Calculator extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      total: null,
-      next: null,
-      operation: null,
-      err: null,
-    };
-    this.handleClick = this.handleClick.bind(this);
-  }
-
-  handleClick(e) {
-    const {
+const Calculator = () => {
+  const [total, setTotal] = useState(null);
+  const [next, setNext] = useState(null);
+  const [operation, setOperation] = useState(null);
+  const [err, setErr] = useState(null);
+  const handleClick = (e) => {
+    const result = calculate({
       total, next, operation, err,
-    } = calculate(this.state, e.target.value);
-    this.setState({
-      total, next, operation, err,
-    });
-  }
-
-  render() {
-    const {
-      total, next, operation, err,
-    } = this.state;
-    return (
-      <div id="Calculator">
-        <div id="result">
-          { next
-        || operation
-        || total
-        || err
-        || 0}
+    }, e.target.value);
+    setTotal(() => result.total);
+    setNext(() => result.next);
+    setOperation(() => result.operation);
+    setErr(() => result.err);
+  };
+  return (
+    <div id="Calculator">
+      <div id="result">
+        { next || operation || total || err || 0 }
+      </div>
+      <div className="pad">
+        <div className="utility">
+          <button type="button" onClick={handleClick} value="AC">AC</button>
+          <button type="button" onClick={handleClick} value="+/-">+/-</button>
+          <button type="button" onClick={handleClick} value="%">%</button>
         </div>
-        <div className="pad">
-          <div className="utility">
-            <button type="button" value="AC" onClick={this.handleClick}>AC</button>
-            <button type="button" value="+/-" onClick={this.handleClick}>+/-</button>
-            <button type="button" value="%" onClick={this.handleClick}>%</button>
-          </div>
-          <div className="numpad">
-            <button type="button" value="7" onClick={this.handleClick}>7</button>
-            <button type="button" value="8" onClick={this.handleClick}>8</button>
-            <button type="button" value="9" onClick={this.handleClick}>9</button>
-            <button type="button" value="4" onClick={this.handleClick}>4</button>
-            <button type="button" value="5" onClick={this.handleClick}>5</button>
-            <button type="button" value="6" onClick={this.handleClick}>6</button>
-            <button type="button" value="1" onClick={this.handleClick}>1</button>
-            <button type="button" value="2" onClick={this.handleClick}>2</button>
-            <button type="button" value="3" onClick={this.handleClick}>3</button>
-            <button type="button" value="0" onClick={this.handleClick} className="numpad-0">0</button>
-            <button type="button" value="." onClick={this.handleClick}>.</button>
-          </div>
-          <div className="leftSide">
-            <button type="button" value="÷" onClick={this.handleClick}>÷</button>
-            <button type="button" value="x" onClick={this.handleClick}>x</button>
-            <button type="button" value="-" onClick={this.handleClick}>-</button>
-            <button type="button" value="+" onClick={this.handleClick}>+</button>
-            <button type="button" value="=" onClick={this.handleClick}>=</button>
-          </div>
+        <div className="numpad">
+          <button type="button" onClick={handleClick} value="7">7</button>
+          <button type="button" onClick={handleClick} value="8">8</button>
+          <button type="button" onClick={handleClick} value="9">9</button>
+          <button type="button" onClick={handleClick} value="4">4</button>
+          <button type="button" onClick={handleClick} value="5">5</button>
+          <button type="button" onClick={handleClick} value="6">6</button>
+          <button type="button" onClick={handleClick} value="1">1</button>
+          <button type="button" onClick={handleClick} value="2">2</button>
+          <button type="button" onClick={handleClick} value="3">3</button>
+          <button type="button" onClick={handleClick} value="0" className="numpad-0">0</button>
+          <button type="button" onClick={handleClick} value=".">.</button>
+        </div>
+        <div className="leftSide">
+          <button type="button" onClick={handleClick} value="÷">÷</button>
+          <button type="button" onClick={handleClick} value="x">x</button>
+          <button type="button" onClick={handleClick} value="-">-</button>
+          <button type="button" onClick={handleClick} value="+">+</button>
+          <button type="button" onClick={handleClick} value="=">=</button>
         </div>
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
 
 export default Calculator;
