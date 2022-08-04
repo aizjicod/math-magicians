@@ -3,10 +3,10 @@ import './Calculator.css';
 import calculate from '../logic/calculate';
 
 const Calculator = () => {
-  const [total, setTotal] = useState({ total: null });
-  const [next, setNext] = useState({ next: null });
-  const [operation, setOperation] = useState({ operation: null });
-  const [err, setErr] = useState({ err: null });
+  const [total, setTotal] = useState(null);
+  const [next, setNext] = useState(null);
+  const [operation, setOperation] = useState(null);
+  const [err, setErr] = useState(null);
   const handleClick = (e) => {
     const result = calculate({
       total, next, operation, err,
@@ -19,11 +19,7 @@ const Calculator = () => {
   return (
     <div id="Calculator">
       <div id="result">
-        {next
-          || operation
-          || total
-          || err
-          || 0}
+        { next || operation || total || err || 0 }
       </div>
       <div className="pad">
         <div className="utility">
