@@ -1,6 +1,53 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import './Calculator.css';
 import calculate from '../logic/calculate';
+
+const Utility = ({ handleClick }) => (
+  <div className="utility">
+    <button type="button" onClick={handleClick} value="AC">AC</button>
+    <button type="button" onClick={handleClick} value="+/-">+/-</button>
+    <button type="button" onClick={handleClick} value="%">%</button>
+  </div>
+);
+
+Utility.propTypes = {
+  handleClick: PropTypes.func.isRequired,
+};
+
+const Numpad = ({ handleClick }) => (
+  <div className="numpad">
+    <button type="button" onClick={handleClick} value="7">7</button>
+    <button type="button" onClick={handleClick} value="8">8</button>
+    <button type="button" onClick={handleClick} value="9">9</button>
+    <button type="button" onClick={handleClick} value="4">4</button>
+    <button type="button" onClick={handleClick} value="5">5</button>
+    <button type="button" onClick={handleClick} value="6">6</button>
+    <button type="button" onClick={handleClick} value="1">1</button>
+    <button type="button" onClick={handleClick} value="2">2</button>
+    <button type="button" onClick={handleClick} value="3">3</button>
+    <button type="button" onClick={handleClick} value="0" className="numpad-0">0</button>
+    <button type="button" onClick={handleClick} value=".">.</button>
+  </div>
+);
+
+Numpad.propTypes = {
+  handleClick: PropTypes.func.isRequired,
+};
+
+const RightSide = ({ handleClick }) => (
+  <div className="rightSide">
+    <button type="button" onClick={handleClick} value="÷">÷</button>
+    <button type="button" onClick={handleClick} value="x">x</button>
+    <button type="button" onClick={handleClick} value="-">-</button>
+    <button type="button" onClick={handleClick} value="+">+</button>
+    <button type="button" onClick={handleClick} value="=">=</button>
+  </div>
+);
+
+RightSide.propTypes = {
+  handleClick: PropTypes.func.isRequired,
+};
 
 const Calculator = () => {
   const [total, setTotal] = useState(null);
@@ -19,34 +66,12 @@ const Calculator = () => {
   return (
     <div id="Calculator">
       <div id="result">
-        { next || operation || total || err || 0 }
+        {next || operation || total || err || 0}
       </div>
       <div className="pad">
-        <div className="utility">
-          <button type="button" onClick={handleClick} value="AC">AC</button>
-          <button type="button" onClick={handleClick} value="+/-">+/-</button>
-          <button type="button" onClick={handleClick} value="%">%</button>
-        </div>
-        <div className="numpad">
-          <button type="button" onClick={handleClick} value="7">7</button>
-          <button type="button" onClick={handleClick} value="8">8</button>
-          <button type="button" onClick={handleClick} value="9">9</button>
-          <button type="button" onClick={handleClick} value="4">4</button>
-          <button type="button" onClick={handleClick} value="5">5</button>
-          <button type="button" onClick={handleClick} value="6">6</button>
-          <button type="button" onClick={handleClick} value="1">1</button>
-          <button type="button" onClick={handleClick} value="2">2</button>
-          <button type="button" onClick={handleClick} value="3">3</button>
-          <button type="button" onClick={handleClick} value="0" className="numpad-0">0</button>
-          <button type="button" onClick={handleClick} value=".">.</button>
-        </div>
-        <div className="leftSide">
-          <button type="button" onClick={handleClick} value="÷">÷</button>
-          <button type="button" onClick={handleClick} value="x">x</button>
-          <button type="button" onClick={handleClick} value="-">-</button>
-          <button type="button" onClick={handleClick} value="+">+</button>
-          <button type="button" onClick={handleClick} value="=">=</button>
-        </div>
+        <Utility handleClick={handleClick} />
+        <Numpad handleClick={handleClick} />
+        <RightSide handleClick={handleClick} />
       </div>
     </div>
   );
