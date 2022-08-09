@@ -5,11 +5,6 @@
   padding: 0;
 }
 
-html {
-  -webkit-backdrop-filter: blur(2px); /* Use for Safari 9+, Edge 17+ (not a mistake) and iOS Safari 9.2+ */
-  backdrop-filter: blur(2px); /* Supported in Chrome 76 */
-}
-
 body {
   background: url(../public/background.jpg);
   margin: 0;
