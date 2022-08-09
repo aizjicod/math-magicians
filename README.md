@@ -52,3 +52,6 @@ Give a ⭐️ if you like this project!
 ### Acknowledgments
 Hat tip for microverse for giving the logic for the calculator
 etc
+
+## 📝 License
+This project is [MIT](./MIT.md) licensed.
