@@ -1,0 +1,68 @@
+
+
+.navbar {
+  background: #ebebeb;
+  border-radius: 20px;
+  margin: 50px 0; 
+  padding: 2% 5%; 
+  display: flex;
+  justify-content: space-between;
+  font-size: 2em;
+}
+
+.navul {
+  list-style: none;
+  display: flex;
+  gap: 22px;
+  font-size: 1.3rem;
+}
+
+.navul .links {
+  font-weight: 700;
+  border-right: 2px solid #000;
+  padding-right: 20px;
+  color: #808;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.navul .links:visited {
+  color: #f5913e;
+}
+
+.navul .links:last-child {
+  border-right: none;
+}
+
+.navul .links:hover {
+  color: #808;
+}
+
+#App,
+#quotes {
+  background: #ebebeb;
+  width: 70vw;
+  padding: 100px;
+  display: flex;
+  justify-content: space-around;
+  gap: 50px;
+  border-radius: 20px;
+}
+
+#home {
+  background: #ebebeb;
+  width: 70vw;
+  padding: 100px;
+  border-radius: 20px;
+}
+
+#home h2{
+  margin-bottom: 2em;
+}
+
+#home p{
+  font-size: 1.2em;
+  margin-bottom: 1em;
+}
+

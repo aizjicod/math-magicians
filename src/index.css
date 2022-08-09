@@ -1,13 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,500;0,600;0,700;0,800;1,500;1,600;1,700&display=swap');
+
 * {
   margin: 0;
   padding: 0;
 }
 
+html {
+  -webkit-backdrop-filter: blur(2px); /* Use for Safari 9+, Edge 17+ (not a mistake) and iOS Safari 9.2+ */
+  backdrop-filter: blur(2px); /* Supported in Chrome 76 */
+}
+
 body {
+  background: url(../public/background.jpg);
   margin: 0;
   font-family:
     -apple-system,
     BlinkMacSystemFont,
+    'Raleway',
     'Segoe UI',
     'Roboto',
     'Oxygen',
@@ -19,6 +28,12 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  height: 100vh;
+  -webkit-backdrop-filter: blur(2px); /* Use for Safari 9+, Edge 17+ (not a mistake) and iOS Safari 9.2+ */
+  backdrop-filter: blur(2px); /* Supported in Chrome 76 */
 }
 
 code {

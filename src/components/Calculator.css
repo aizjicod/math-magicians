@@ -1,10 +1,5 @@
 #Calculator {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   width: 50%;
-  height: 500px;
 }
 
 #result {
@@ -61,9 +56,20 @@
   justify-content: center;
 }
 
+.numpad *:hover,
+.utility *:hover {
+  background:  #777;
+  color: #fff;
+}
+
+.rightSide *:hover {
+  background:  #808;
+  color: #fff;
+}
+
 button {
   background: transparent;
   width: 100%;
-  font-size: 1.2em;
-  font-weight: 400;
+  font-size: 1.3em;
+  font-weight: 600;
 }
