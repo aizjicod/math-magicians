@@ -1,31 +1,44 @@
 import { render, fireEvent, screen } from '@testing-library/react';
-import App from '../App';
 import Calculator from '../components/calculator';
 
-test('links work properly', () => {
-  const { container } = render(<App url="/" />);
-  fireEvent.click(screen.getByText('Home'));
-  expect(container.getElementsByClassName('home')[0]).toHaveTextContent('Welcome to our page');
+describe('footer component', () => {
+  test('testing if theres a 2022 text in the footer', () => {
+    render(<Calculator />);
+    const calculatorBtn = screen.getByText(/AC/);
+    expect(calculatorBtn).toBeInTheDocument();
+  });
 });
 
-test('links work properly', () => {
-  const { container } = render(<App url="/calculator" />);
-  fireEvent.click(screen.getByText('Calculator'));
-  expect(container.getElementsByClassName('calculator-page')[0]).toHaveTextContent('Lets do some math!');
-});
+describe('Calculator tests', () => {
+  test('Renders Calculator component', () => {
+    const tree = render(<Calculator />);
+    expect(tree).toMatchSnapshot();
+  });
 
-test('links work properly', () => {
-  const { container } = render(<App url="/quote" />);
-  fireEvent.click(screen.getByText('Quote'));
-  expect(container.getElementsByClassName('quote')[0]).toHaveTextContent('Mathematics is not about numbers');
-});
+  test('Simulating user interaction', () => {
+    render(<Calculator />);
+    const result = document.querySelector('#result');
+    const key7 = screen.getByText('7');
+    const key8 = screen.getByText('8');
+    fireEvent.click(key7);
+    fireEvent.click(key8);
+    expect(result.textContent).toBe('78');
+  });
 
-test('When a user clicks in the Calculator link, the Calculator page should appear', () => {
-  render(<Calculator />);
-  fireEvent.click(screen.queryByText('6'));
-  fireEvent.click(screen.queryByText('x'));
-  fireEvent.click(screen.queryByText('8'));
-  fireEvent.click(screen.queryByText('='));
+  test('Simulating user interaction', () => {
+    render(<Calculator />);
 
-  expect(screen.queryByText('48')).not.toBeNull();
+    const result = document.querySelector('#result');
+    const key3 = screen.getByText('3');
+    const key7 = screen.getByText('7');
+    const keyTimes = screen.getByText('x');
+    const keyEquals = screen.getByText('=');
+
+    fireEvent.click(key3);
+    fireEvent.click(keyTimes);
+    fireEvent.click(key7);
+    fireEvent.click(keyEquals);
+
+    expect(result.textContent).toBe('21');
+  });
 });
