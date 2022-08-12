@@ -3,6 +3,8 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 On this app i will be using the files above to create a single web page which will include a calculator as well as quotes on another intance of the page
 
+## demo 
+click this (demo)[https://calculatorapp-aiziji.netlify.app]
 ## Available Scripts
 
 In the project directory, you can run:
