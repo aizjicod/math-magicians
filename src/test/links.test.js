@@ -1,5 +1,5 @@
 import { render, fireEvent, screen } from '@testing-library/react';
-import Calculator from '../components/calculator';
+import Calculator from '../components/calculator.js';
 
 describe('footer component', () => {
   test('testing if theres a 2022 text in the footer', () => {
