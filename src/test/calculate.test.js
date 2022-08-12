@@ -1,6 +1,5 @@
 import calculate from '../logic/calculate';
 
-
 describe('testing calculate.js logic', () => {
   test('test calculate.js value on next', () => {
     const result = calculate({ next: null, total: null, operation: null }, '25');
@@ -27,7 +26,7 @@ describe('testing calculate.js logic', () => {
     const result = calculate(object, buttonName);
     expect(result).toStrictEqual({ total: null, next: null, operation: null });
   });
-  
+
   it('= button is clicked', () => {
     const object = {
       total: 2,
@@ -38,7 +37,7 @@ describe('testing calculate.js logic', () => {
     const result = calculate(object, buttonName);
     expect(result).toStrictEqual({ total: '4', next: null, operation: null });
   });
-  
+
   it('+/- button is clicked', () => {
     const object = {
       total: 2,
@@ -49,7 +48,7 @@ describe('testing calculate.js logic', () => {
     const result = calculate(object, buttonName);
     expect(result).toStrictEqual({ total: '-2', next: null, operation: null });
   });
-  
+
   it('. button is clicked', () => {
     const object = {
       total: null,
@@ -60,7 +59,7 @@ describe('testing calculate.js logic', () => {
     const result = calculate(object, buttonName);
     expect(result).toStrictEqual({ total: null, next: '3.', operation: null });
   });
-  
+
   it('0 button is clicked', () => {
     const object = {
       total: null,
@@ -72,4 +71,3 @@ describe('testing calculate.js logic', () => {
     expect(result).toStrictEqual({ total: null, next: '5' });
   });
 });
-
