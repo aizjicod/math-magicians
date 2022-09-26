@@ -55,7 +55,7 @@ h1 {
   gap: 50px;
   border-radius: 20px;
   padding: 10%;
-  margin:  0 auto;
+  margin: 0 auto;
 }
 
 #home {
@@ -63,7 +63,7 @@ h1 {
   width: 80vw;
   padding: 10%;
   border-radius: 20px;
-  margin:  0 auto;
+  margin: 0 auto;
 }
 
 #home h2 {
@@ -89,12 +89,12 @@ h1 {
   .navbar {
     justify-content: space-around;
   }
-  
+
   .navul .links {
     padding-right: 12px;
   }
 
-   h1 {
+  h1 {
     font-size: 1.3em;
   }
 
