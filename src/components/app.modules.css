@@ -1,19 +1,26 @@
 
 .navbar {
   background: #ebebeb;
+  width: min-content;
   border-radius: 20px;
   margin: 50px 0;
-  padding: 2% 5%;
+  padding: 5% 3%;
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
   font-size: 2em;
+}
+
+h1 {
+  font-size: 1em;
 }
 
 .navul {
   list-style: none;
   display: flex;
   gap: 22px;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
 }
 
 .navul .links {
@@ -41,19 +48,22 @@
 #App,
 #quotes {
   background: #ebebeb;
-  width: 70vw;
-  padding: 100px;
+  width: 80vw;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
   gap: 50px;
   border-radius: 20px;
+  padding: 10%;
+  margin:  0 auto;
 }
 
 #home {
   background: #ebebeb;
-  width: 70vw;
-  padding: 100px;
+  width: 80vw;
+  padding: 10%;
   border-radius: 20px;
+  margin:  0 auto;
 }
 
 #home h2 {
@@ -63,4 +73,34 @@
 #home p {
   font-size: 1.2em;
   margin-bottom: 1em;
+}
+
+@media screen and (min-width: 400px) {
+  .navbar {
+    width: 80vw;
+  }
+
+  .navul {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .navbar {
+    justify-content: space-around;
+  }
+  
+  .navul .links {
+    padding-right: 12px;
+  }
+
+   h1 {
+    font-size: 1.3em;
+  }
+
+  #App,
+  #quotes,
+  #home {
+    padding: 100px;
+  }
 }
