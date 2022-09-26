@@ -3,6 +3,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
@@ -29,14 +30,4 @@ body {
   height: 100vh;
   -webkit-backdrop-filter: blur(2px); /* Use for Safari 9+, Edge 17+ (not a mistake) and iOS Safari 9.2+ */
   backdrop-filter: blur(2px); /* Supported in Chrome 76 */
-}
-
-code {
-  font-family:
-    source-code-pro,
-    Menlo,
-    Monaco,
-    Consolas,
-    'Courier New',
-    monospace;
 }
